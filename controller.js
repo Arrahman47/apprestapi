@@ -15,3 +15,18 @@ exports.tampilsemuakomik = function(req,res){
         }
     });
 };
+
+exports.tampilberdasarkanid = function(req, res) {
+    let id = req.params.id;
+    connection.query(
+        'SELECT * FROM Komiku WHERE id_komik = ?',
+        [id],
+        function(error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok(rows, res);
+            }
+        }
+    );
+};
