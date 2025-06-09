@@ -48,3 +48,22 @@ exports.tambahKomik = function (req, res) {
         }
     );
 };
+
+exports.ubahMahasiswa = function(req, res){
+    var id = req.body.id_komik;
+    var nama = req.body.nama;
+    var genre = req.body.genre;
+    var rilis = req.body.rilis;
+
+    connection.query(
+        'UPDATE Komiku SET nama=?, genre=?, rilis=? WHERE id_komik=?',
+        [nama, genre, rilis, id],
+        function(error, rows, fields){
+            if(error){
+                console.log(error);
+            } else {
+                response.ok("Berhasil Ubah Data", res);
+            }
+        }
+    );
+};
