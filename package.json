@@ -1,0 +1,25 @@
+{
+  "name": "apprestapi",
+  "version": "1.0.0",
+  "description": "rest api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arrahman47/apprestapi.git"
+  },
+  "keywords": [
+    "rest",
+    "api",
+    "node",
+    "js"
+  ],
+  "author": "maman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arrahman47/apprestapi/issues"
+  },
+  "homepage": "https://github.com/Arrahman47/apprestapi#readme"
+}
