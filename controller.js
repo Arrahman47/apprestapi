@@ -30,3 +30,21 @@ exports.tampilberdasarkanid = function(req, res) {
         }
     );
 };
+
+exports.tambahKomik = function (req, res) {
+    var nama = req.body.nama;
+    var genre = req.body.genre;
+    var rilis = req.body.rilis;
+
+    connection.query(
+        'INSERT INTO Komiku (nama, genre, rilis) VALUES (?, ?, ?)',
+        [nama, genre, rilis],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Berhasil Menambahkan Data!", res);
+            }
+        }
+    );
+};
