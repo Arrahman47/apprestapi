@@ -49,7 +49,7 @@ exports.tambahKomik = function (req, res) {
     );
 };
 
-exports.ubahMahasiswa = function(req, res){
+exports.ubahKomik = function(req, res){
     var id = req.body.id_komik;
     var nama = req.body.nama;
     var genre = req.body.genre;
@@ -67,3 +67,20 @@ exports.ubahMahasiswa = function(req, res){
         }
     );
 };
+
+exports.hapusKomik = function (req, res) {
+    const id = req.body.id_komik;
+    connection.query(
+        'DELETE FROM Komiku WHERE id_komik = ?',
+        [id],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+                res.status(500).send({ error: "Gagal menghapus data" });
+            } else {
+                response.ok("Berhasil Hapus Data", res);
+            }
+        }
+    );
+};
+
