@@ -13,7 +13,7 @@ module.exports = function(app) {
         .get(jsonku.tampilberdasarkanid);
 
     app.route('/tambah')
-        .post(jsonku.tambahKomik)
+    .post(jsonku.upload.single('image'), jsonku.tambahKomik);
 
     app.route('/ubah')
         .put(jsonku.ubahKomik)
